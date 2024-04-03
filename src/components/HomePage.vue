@@ -7,28 +7,28 @@
         <!-- 导览展示模块 -->
         <el-card class="module-card">
           <h2>导览展示</h2>
-          <p>这是导览展示模块的内容。</p>
+          <p>以3D模型分科室详尽地展示宠物医院</p>
           <el-button class="experience-button" type="primary" @click="goToGuidePage">体验</el-button>
         </el-card>
   
         <!-- 角色扮演模块 -->
         <el-card class="module-card">
           <h2>角色扮演</h2>
-          <p>这是角色扮演模块的内容。</p>
+          <p>扮演前台、医助、医师以了解职位要求</p>
           <el-button class="experience-button" type="primary" @click="goToRolePage">体验</el-button>
         </el-card>
   
         <!-- 病例学习模块 -->
         <el-card class="module-card">
           <h2>病例学习</h2>
-          <p>这是病例学习模块的内容。</p>
+          <p>学习丰富全面的宠物病例</p>
           <el-button class="experience-button" type="primary" @click="goToCasePage">体验</el-button>
         </el-card>
   
         <!-- 测试答题模块 -->
         <el-card class="module-card">
           <h2>测试答题</h2>
-          <p>这是测试答题模块的内容。</p>
+          <p>对学习情况进行测试</p>
           <el-button class="experience-button" type="primary" @click="goToExamPage">体验</el-button>
         </el-card>
       </div>
