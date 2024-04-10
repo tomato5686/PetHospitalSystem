@@ -7,18 +7,8 @@
       <!-- 添加病例 -->
       <el-input v-model="newCase" placeholder="请输入新的病例"></el-input>
       <el-button @click="addCase" type="success">添加</el-button>
-  
-      <!-- 病例列表 -->
-      <el-table :data="cases" style="width: 100%">
-        <el-table-column prop="name" label="病例名称"></el-table-column>
-        <el-table-column label="操作">
-          <template #default="{ row }">
-            <el-button @click="deleteCase(row)" type="danger" size="mini">删除</el-button>
-          </template>
-        </el-table-column>
-      </el-table>
     </div>
-  </template>
+</template>
   
   <script>
   import { ref } from 'vue';
@@ -38,7 +28,7 @@
     },
     methods: {
       fetchCases() {
-        axios.get('http:/localhost:5173/cases')
+        axios.get('http://localhost:5173/case_admin')
           .then(response => {
             this.cases = response.data;
           })
@@ -49,12 +39,41 @@
       searchCases() {
         // 根据关键字检索病例
         // 向后端发送搜索请求
+        if (this.searchKeyword.trim() !== '') {
+          // 创建包含搜索关键字的对象
+          const searchData = {
+            keyword: this.searchKeyword.trim()
+          };
+          // 向后端发送检索病例的 GET 请求
+          axios.get('http://localhost:5173/case_admin', { params: searchData })
+            .then(response => {
+              // 根据后端返回的结果更新前端界面上的病例列表
+              this.cases = response.data;
+            })
+          .catch(error => {
+            console.error('Error searching cases:', error);
+          });
+        }
       },
       addCase() {
         // 向后端发送添加病例请求
-      },
-      deleteCase(row) {
-        // 向后端发送删除病例请求
+        if (this.newCase.trim() !== '') {
+            // 创建包含新病例信息的对象
+            const newCaseData = {
+            name: this.newCase.trim(),
+            // 其他病例属性...
+            };
+            // 向后端发送添加病例的 POST 请求
+            axios.post('http://localhost:5173/case_admin', newCaseData)
+                .then(response => {
+                // 添加成功后，更新前端界面上的病例列表
+                this.cases.push(response.data);
+                this.newCase = ''; // 清空输入框
+            })
+            .catch(error => {
+                console.error('Error adding case:', error);
+            });
+        }
       }
     }
   };

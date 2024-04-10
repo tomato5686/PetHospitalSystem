@@ -9,6 +9,7 @@ import Role from '@/views/Role.vue'
 import Role_assistant from '@/views/Role_assistant.vue'
 import Role_receptionist from '@/views/Role_receptionist.vue'
 import Role_veterinarian from '@/views/Role_veterinarian.vue'
+import Case_admin from'@/views/Case_admin.vue'
 
 import Guide from '@/components/Guide.vue'
 import Test from '@/components/Test.vue'
@@ -34,6 +35,11 @@ const router=createRouter({
             name:'HomeAdmin',
             path:'/home_admin',
             component:Home_admin
+        },
+        {
+            name:'CaseAdmin',
+            path:'/case_admin',
+            component:Case_admin
         },
         {
             name: 'GuidePage',

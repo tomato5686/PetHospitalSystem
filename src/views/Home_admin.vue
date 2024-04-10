@@ -39,7 +39,6 @@
   
   <script>
   export default {
-    name: 'HomePage',
     methods: {
       goToGuidePage () {
         this.$router.push({ name: '' })
@@ -48,7 +47,7 @@
         this.$router.push({ name: '' })
       },
       goToCasePage () {
-        this.$router.push({ name: '' })
+        this.$router.push({ name: 'CaseAdmin' })
       },
       goToExamPage () {
         this.$router.push({ name: '' })
