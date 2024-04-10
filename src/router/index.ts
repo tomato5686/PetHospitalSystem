@@ -1,53 +1,57 @@
 import { createRouter, createWebHistory} from 'vue-router'
 
 import Logger from '@/views/Logger.vue'
-import Home from '@/views/Home.vue'
-import Case_learning from '@/views/Case_learning.vue'
-import Role_play from '@/views/Role_play.vue'
+import Home from '@/components/Home.vue'
+import Home_admin from '@/views/Home_admin.vue'
+import Case from '@/views/Case.vue'
+import Role from '@/views/Role.vue'
 import Role_assistant from '@/views/Role_assistant.vue'
 import Role_receptionist from '@/views/Role_receptionist.vue'
 import Role_veterinarian from '@/views/Role_veterinarian.vue'
 
-import HomePage from '@/components/HomePage.vue'
-import GuidePage from '@/components/GuidePage.vue'
-import TestPage from '@/components/TestPage.vue'
-import ExamPage from '@/components/ExamPage.vue'
+import Guide from '@/components/Guide.vue'
+import Test from '@/components/Test.vue'
+import Exam from '@/components/Exam.vue'
 
 const router=createRouter({
     history:createWebHistory(),
     routes:[
         {
-            path:'/logger',
+            path:'/',
             component:Logger
         },
         {
             path:'/home',
-            component:HomePage
+            component:Home
+        },
+        {
+            path:'/home_admin',
+            component:Home_admin
         },
         {
             name: 'GuidePage',
             path:'/guide',
-            component:GuidePage
+            component:Guide
         },
         {
             name: 'ExamPage',
             path:'/test',
-            component:TestPage
+            component:Test
         },
         {
             
             path:'/exam',
-            component:ExamPage
+            component:Exam
         },
         {
             name: 'CasePage',
             path:'/case',
-            component:Case_learning
+            component:Case
         },
         {
             name: 'RolePage',
             path:'/role',
-            component:Role_play,
+            component:Role,
             children:[
                 {
                     path:'assistant',
@@ -62,10 +66,6 @@ const router=createRouter({
                     component:Role_veterinarian
                 },
             ]
-        },
-        {
-            path:'/',
-            redirect:'/logger'
         },
     ]
 })
