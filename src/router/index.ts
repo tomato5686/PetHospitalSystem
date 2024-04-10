@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory} from 'vue-router'
 
 import Logger from '@/views/Logger.vue'
+import User_admin from '@/views/User_admin.vue'
 import Home from '@/components/Home.vue'
 import Home_admin from '@/views/Home_admin.vue'
 import Case from '@/views/Case.vue'
@@ -21,10 +22,16 @@ const router=createRouter({
             component:Logger
         },
         {
+            name:'UserAdmin',
+            path:'/user_admin',
+            component:User_admin
+        },
+        {
             path:'/home',
             component:Home
         },
         {
+            name:'HomeAdmin',
             path:'/home_admin',
             component:Home_admin
         },

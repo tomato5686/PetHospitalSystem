@@ -45,8 +45,8 @@ function search(k:any){
         <br>
         <div>
             <ul>
-                <li v-for="c in cases">
-                    <button @click="select(c.id)">{{c.title}}</button><br>
+                <li v-for="c in cases" :key="c.id">
+                    <button @click="select(c.id)">{{ c.title }}</button><br>
                 </li>
             </ul>
         </div>
