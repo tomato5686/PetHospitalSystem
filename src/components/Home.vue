@@ -35,6 +35,7 @@
       <!-- 管理员模块 -->
       <el-card class="module-card">
         <h2>管理系统</h2>
+        <p>这是管理系统的内容。</p>
         <el-button class="experience-button" type="primary" @click="goToHomeAdmin">体验</el-button>
       </el-card>
     </div>
@@ -74,7 +75,7 @@ export default {
   color: #2c3e50;
   height: 100vh; /* 让页面铺满整个视口 */
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 .background-image {
   background-image: url('@/assets/background.jpg'); /* 背景图片地址 */

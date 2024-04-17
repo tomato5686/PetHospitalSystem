@@ -9,8 +9,10 @@ import Role from '@/views/Role.vue'
 import Role_assistant from '@/views/Role_assistant.vue'
 import Role_receptionist from '@/views/Role_receptionist.vue'
 import Role_veterinarian from '@/views/Role_veterinarian.vue'
-import Case_admin from'@/views/Case_admin.vue'
+import Test_modify from '@/views/Test_modify.vue'
+import Case_admin from '@/views/Case_admin.vue'
 
+import ThreeDGuide from '@/components/3DGuide.vue'
 import Guide from '@/components/Guide.vue'
 import Test from '@/components/Test.vue'
 import Exam from '@/components/Exam.vue'
@@ -23,9 +25,23 @@ const router=createRouter({
             component:Logger
         },
         {
+            path:'/3DGuide',
+            component:ThreeDGuide
+        },
+        {
+            name:'Test_modify',
+            path:'/Test_modify',
+            component:Test_modify
+        },
+        {
             name:'UserAdmin',
             path:'/user_admin',
             component:User_admin
+        },
+        {
+            name:'CaseAdmin',
+            path:'/case_admin',
+            component:Case_admin
         },
         {
             path:'/home',
@@ -35,11 +51,6 @@ const router=createRouter({
             name:'HomeAdmin',
             path:'/home_admin',
             component:Home_admin
-        },
-        {
-            name:'CaseAdmin',
-            path:'/case_admin',
-            component:Case_admin
         },
         {
             name: 'GuidePage',
